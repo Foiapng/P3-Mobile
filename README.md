@@ -1,0 +1,18 @@
+para executar o arquivo, execute o comando 
+        
+        npm install
+(instala as dependências do projeto)
+
+
+depois o comando
+        
+        npx expo start
+
+Dependências
+
+    ├── expo@54.0.34
+    ├── expo-status-bar@3.0.9
+    ├── react@19.1.0
+    ├── react-dom@19.1.0
+    ├── react-native@0.81.5
+    └── react-native-web@0.21.0
