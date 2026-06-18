@@ -1,4 +1,4 @@
-import GameScreen from "./src/screens/GameScreen";
+import GameScreen from "./src/screens/TelaPrincipal";
 
 export default function App() {
   return <GameScreen />;

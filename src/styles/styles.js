@@ -2,72 +2,73 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#1F2235",
-    justifyContent: "center",
-    alignItems: "center",
     padding: 20,
+    backgroundColor: "#145d58",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
   },
 
-  card: {
-    width: "100%",
-    backgroundColor: "#2C314D",
-    borderRadius: 24,
-    padding: 25,
-    alignItems: "center",
-  },
+  // card: {
+  //   padding: 25,
+  //   borderRadius: 8,
+  //   backgroundColor: "#419772",
+  //   width: "80%",
+  //   alignItems: "center",
+  // },
 
   title: {
-    fontSize: 28,
-    fontWeight: "bold",
     color: "#FFFFFF",
     marginBottom: 10,
+    fontWeight: "bold",
+    fontSize: 28,
   },
 
   subtitle: {
-    color: "#CFCFCF",
-    fontSize: 15,
     marginBottom: 20,
+    fontSize: 15,
+    color: "#ffffff",
   },
 
   input: {
-    width: 120,
-    height: 60,
-    backgroundColor: "#FFF",
-    borderRadius: 14,
     textAlign: "center",
-    fontSize: 28,
     marginBottom: 20,
+    width: 120,
+    backgroundColor: "#FFF",
+    fontSize: 28,
+    borderRadius: 8,
+    height: 60,
   },
 
   button: {
-    backgroundColor: "#FFB703",
-    paddingVertical: 14,
     paddingHorizontal: 35,
-    borderRadius: 14,
+    backgroundColor: "#0c3238",
     marginBottom: 20,
+    borderRadius: 8,
+    paddingVertical: 14,
   },
 
   secondaryButton: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#0c3238",
   },
 
   buttonText: {
-    fontSize: 16,
+    color: "#FFFFFFFF",
     fontWeight: "bold",
-    color: "#222",
+    fontSize: 16,
   },
 
   message: {
-    color: "#FFFFFF",
-    fontSize: 18,
-    textAlign: "center",
     marginBottom: 15,
+    textAlign: "center",
+    fontSize: 18,
+    color: "#FFFFFF",
   },
 
   attempts: {
-    color: "#FFCF56",
-    fontSize: 18,
+    marginBottom: 10,
     fontWeight: "bold",
+    color: "#0c3238",
+    fontSize: 18,
   },
 });

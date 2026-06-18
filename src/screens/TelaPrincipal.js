@@ -5,8 +5,8 @@ import {
   SafeAreaView,
 } from "react-native";
 
-import NumberInput from "../components/NumberInput";
-import GuessButton from "../components/GuessButton";
+import NumberInput from "../components/InputPalpite";
+import GuessButton from "../components/BotaoJogar";
 import styles from "../styles/styles";
 
 function generateNumber() {
@@ -20,41 +20,40 @@ export default function GameScreen() {
   const [guess, setGuess] = useState("");
   const [attempts, setAttempts] = useState(3);
   const [message, setMessage] = useState(
-    "Tente descobrir o número!"
+    "Digite um número"
   );
   const [gameFinished, setGameFinished] =
     useState(false);
 
-  function checkGuess() {
-    if (guess === "") {
-      setMessage("Digite um número.");
+    function checkGuess() {
+    if (guess.trim() === "") {
+      setMessage("Digite um número entre 0 e 9.");
       return;
     }
 
     const playerGuess = Number(guess);
 
     if (playerGuess === secretNumber) {
-      setMessage("Parabéns! Você acertou!");
+      setMessage("Você acertou!");
       setGameFinished(true);
       return;
     }
 
-    const remaining = attempts - 1;
+    setAttempts(attempts - 1);
 
-    if (remaining <= 0) {
-      setAttempts(0);
+    if (attempts - 1 === 0) {
       setMessage(
-        `Você perdeu! O número era ${secretNumber}.`
+        `O número era ${secretNumber}.`
       );
+
       setGameFinished(true);
-      return;
+    } else {
+      setMessage(
+        `Tente de novo ${
+          attempts - 1
+        } tentativas sobrando.`
+      );
     }
-
-    setAttempts(remaining);
-
-    setMessage(
-      `Errado! Restam ${remaining} tentativa(s).`
-    );
 
     setGuess("");
   }
@@ -63,15 +62,11 @@ export default function GameScreen() {
     setSecretNumber(generateNumber());
     setGuess("");
     setAttempts(3);
-    setMessage(
-      "Nova partida iniciada. Boa sorte!"
-    );
     setGameFinished(false);
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.card}>
         <Text style={styles.title}>
           Adivinhe o Número
         </Text>
@@ -103,12 +98,12 @@ export default function GameScreen() {
 
         {gameFinished && (
           <GuessButton
-            title="Jogar Novamente"
+            title="Jogar de novo"
             onPress={restartGame}
             secondary
           />
         )}
-      </View>
+      {/* </View> */}
     </SafeAreaView>
   );
 }
